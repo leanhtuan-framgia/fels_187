@@ -1,3 +1,25 @@
 en:
   header:
     logo: "FRAMGIA E-LEARNING SYSTEM"
+    login: "Login"
+    logout: "Log out"
+    edit_user: "Edit profile"
+
+  user_method:
+    login: "Log In"
+    edit: "Edit"
+
+  warning:
+    character_minimum: " %{number} characters minimum"
+    change_password: "(leave blank if you don't want to change it)"
+    need_password: "(we need your current password to confirm your changes)"
+    unhappy: "Unhappy?"
+    sure: "Are you sure?"
+
+  user_option:
+    cancel_account: "Delete my account"
+    back: "Back"
+    update: "Update"
+
+  message:
+    error: "This form contains %{error_count} errors"
