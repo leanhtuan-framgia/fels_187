@@ -15,6 +15,7 @@ en:
     need_password: "(we need your current password to confirm your changes)"
     unhappy: "Unhappy?"
     sure: "Are you sure?"
+    login: "via"
 
   user_option:
     cancel_account: "Delete my account"
@@ -23,3 +24,6 @@ en:
 
   message:
     error: "This form contains %{error_count} errors"
+
+  notification:
+    logout: "Are you sure want to quit?"

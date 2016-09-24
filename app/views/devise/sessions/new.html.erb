@@ -25,4 +25,14 @@
         class: "btn btn-primary form-control" %>
     </div>
   <% end %>
+
+  <div class="col-md-offset-7">
+    <b><%= t "warning.login" %></b>
+    <%= link_to image_tag("facebook_64.png"),
+      user_facebook_omniauth_authorize_path, class: "img-rounded" %>
+    <%= link_to image_tag("google_64.png"),
+      user_google_oauth2_omniauth_authorize_path, class: "img-rounded" %>
+    <%= link_to image_tag("twitter_64.png"),
+      user_twitter_omniauth_authorize_path, class: "img-rounded" %>
+  </div>
 </div>

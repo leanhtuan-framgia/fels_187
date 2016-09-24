@@ -15,7 +15,8 @@
               <li><%= link_to t("header.edit_user"),
                 edit_user_registration_path %></li>
               <li><%= link_to t("header.logout"),
-                destroy_user_session_path, method: :delete %></li>
+                destroy_user_session_path, method: :delete,
+                data: {confirm: t("notification.logout")} %></li>
             </ul>
           </li>
         <% else %>

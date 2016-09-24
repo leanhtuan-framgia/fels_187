@@ -11,6 +11,11 @@ gem "public_activity", "~> 1.5"
 gem "devise", "~> 4.2"
 gem "jbuilder", "~> 2.5"
 gem "turbolinks", "~> 5"
+gem "omniauth-facebook", "~> 4.0"
+gem "omniauth-google-oauth2", "~> 0.4.1"
+gem "omniauth-twitter", "~> 1.2", ">= 1.2.1"
+gem "omniauth"
+gem "config"
 
 group :development, :test do
   gem "byebug", platform: :mri
