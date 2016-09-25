@@ -4,6 +4,8 @@ en:
     login: "Login"
     logout: "Log out"
     edit_user: "Edit profile"
+    create_user: "New user"
+    users: "Users"
 
   user_method:
     login: "Log In"
@@ -30,3 +32,18 @@ en:
 
   flash:
     not_admin: "You don't have the permission to access this page"
+    delete_user: "Delete user successfully!"
+    create_user_success: "Create user successgully!"
+    not_found: "Not found!"
+
+  btn:
+    submit: "Submit"
+    search: "Search"
+    create_user: "Create"
+    delete: "Delete"
+
+  title:
+    search_name: "name"
+
+  confirm:
+    delete_user: "Are you want to delete this user?"

@@ -17,6 +17,8 @@ gem "omniauth-twitter", "~> 1.2", ">= 1.2.1"
 gem "omniauth"
 gem "config"
 gem "cancancan"
+gem "ransack"
+gem "will_paginate", "3.1.0"
 
 group :development, :test do
   gem "byebug", platform: :mri

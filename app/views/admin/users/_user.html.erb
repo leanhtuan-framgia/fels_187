@@ -1,0 +1,7 @@
+<li>
+  <%= image_tag user.avatar, class: "img-lesson", size: Settings.size_avatar_list %>
+  <%= link_to user.name, [:admin, user] %>
+  <%= link_to(t("btn.delete"), [:admin, user],
+    method: :delete, data: {confirm: t("confirm.delete_user")},
+    class: "btn") unless user.is_admin? %>
+</li>
