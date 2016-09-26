@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(version: 20160923060430) do
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "content"
+    t.integer  "question_type"
     t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.index ["category_id"], name: "index_questions_on_category_id", using: :btree
   end
 

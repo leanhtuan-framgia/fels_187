@@ -1,0 +1,22 @@
+<%= form_for [:admin, @question] do |f| %>
+  <%= render "shared/error_messages", object: @question %>
+  <%= f.hidden_field :category_id, value: params[:category_id] %>
+  <%= f.label :content, t("question_content") %>
+  <%= f.text_field :content, class: "form-control" %>
+  <br>
+  <%= f.label :question_type %>
+  <%= f.select :question_type, options_for_select(@question_types.map{|key, value|
+    [t("question_type.#{key}"), key]}), {include_blank: false},
+    class: "form-control question_type" %>
+  <div class="clearfix"></div>
+  <h3><%= t "answers" %></h3>
+  <div>
+    <%= f.fields_for :answers do |builder| %>
+      <%= render "answer_fields", f: builder %>
+    <% end %>
+    <div class="add_answer">
+      <%= link_to_add_fields t("btn.add_answer"), f, :answers %>
+    </div>
+  </div>
+  <p><%= f.submit t("btn.submit"), class: "btn btn-primary" %></p>
+<% end %>
