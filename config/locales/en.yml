@@ -1,11 +1,14 @@
 en:
   header:
+    admin_logo: "FELS"
     logo: "FRAMGIA E-LEARNING SYSTEM"
     login: "Login"
     logout: "Log out"
     edit_user: "Edit profile"
     create_user: "New user"
     users: "Users"
+
+  welcome_admin: "Welcome Admin"
 
   user_method:
     login: "Log In"
@@ -44,6 +47,34 @@ en:
 
   title:
     search_name: "name"
+    category_name: "Name: %{category_name}"
+    description: "Description: %{description}"
 
   confirm:
     delete_user: "Are you want to delete this user?"
+
+  flash:
+    not_admin: "You are not authorize to access this page!"
+    edit_success: "Update Successful"
+    create_success: "Create Successful"
+    delete_success: "Delete Successful"
+    delete_fail: "Delete Failed"
+
+  layouts:
+    home: "Home"
+    categories: "Categories"
+    lessons:  "Lessons"
+    questions: "Questions"
+    users: "Users"
+    logout: "Log out"
+
+  provide:
+    categories: "Categories"
+    create_category: "Create category"
+    edit_category: "Edit category"
+    lesson: "Lesson"
+    lessons: "Lessons"
+
+  table:
+    number_lesson: "Number lessons"
+    number_question: "Number questions"

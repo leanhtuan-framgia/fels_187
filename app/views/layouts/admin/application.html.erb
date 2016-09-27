@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title yield :title %></title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application", media: "all",
+    "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+</head>
+
+<body class="skin-blue sidebar-mini wysihtml5-supported">
+  <%= render "layouts/admin/header" %>
+  <div class="wrapper">
+    <aside class="main-sidebar">
+      <section class="sidebar">
+        <div class="user-panel">
+          <div class="pull-left">
+            <%= image_tag current_user.avatar, size: Settings.size_profile %>
+          </div>
+          <div class="pull-left info">
+            <p><%= t "welcome_admin" %></p>
+          </div>
+        </div>
+        <ul class="sidebar-menu">
+          <li>
+            <%= link_to "#" do %>
+              <i class="glyphicon glyphicon-home"></i>
+              <span><%= t "layouts.home" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_categories_path do %>
+              <i class="glyphicon glyphicon-folder-open"></i>
+              <span><%= t "layouts.categories" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to admin_users_path do %>
+              <i class="glyphicon glyphicon-user"></i>
+              <span><%= t "layouts.users" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="glyphicon glyphicon-book"></i>
+              <span><%= t "layouts.lessons" %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="glyphicon glyphicon-home"></i>
+              <span><%= t "layouts.logout" %></span>
+            <% end %>
+          </li>
+      </section>
+    </aside>
+  </div>
+  <div class="container col-md-10 col-md-offset-2">
+    <% flash.each do |message_type, message| %>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
+</html>

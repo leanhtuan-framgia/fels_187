@@ -1,0 +1,9 @@
+<tr id="category-<%= category.id %>">
+  <th><%= link_to category.name, [:admin, category] %></th>
+  <th><%= category.questions.size %></th>
+  <th><%= category.lessons.size %></th>
+  <th>
+    <%= link_to t("btn.edit"), edit_admin_category_path(category.id),
+      class: "btn btn-primary" %>
+  </th>
+</tr>

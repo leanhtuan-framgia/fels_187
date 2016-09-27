@@ -1,0 +1,15 @@
+<% provide :title, t("provide.categories") %>
+<h1><%= t "provide.categories" %></h1>
+<div class="category">
+  <div>
+    <h2>
+      <%= t "title.category_name", category_name: @category.name %>
+    </h2>
+    <h3>
+      <%= t "title.description", description: @category.description %>
+    </h3>
+  </div>
+  <%= link_to t("btn.delete"), [:admin, @category], method: :delete,
+    data: {confirm: t("confirm.delete")}, class: "btn btn-danger" %>
+  <br>
+</div>
