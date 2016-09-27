@@ -1,4 +1,7 @@
 default_password: "12345678"
 search_field:
   user: "name_cont"
+  category: "name"
 size_avatar_list: "50x50"
+size_profile: "50x50"
+size: 9

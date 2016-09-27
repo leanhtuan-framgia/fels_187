@@ -1,0 +1,30 @@
+<% provide :title, t("provide.categories") %>
+<h1><%= t "provide.categories" %></h1>
+<div>
+  <br>
+  <div class="center">
+    <%= render "admin/shared/search_form", name: Settings.search_field.category %>
+  </div>
+  <br>
+  <div class="col-md-offset-1">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-3"><%= t "table.name" %></th>
+          <th><%= t "table.number_question" %></th>
+          <th><%= t "table.number_lesson" %></th>
+          <th>
+            <%= link_to t("btn.create_category"), new_admin_category_path,
+              class: "btn btn-primary" %>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+  </div>
+  <div class="row text-center">
+    <%= will_paginate %>
+  </div>
+</div>

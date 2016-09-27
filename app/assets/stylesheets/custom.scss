@@ -4,7 +4,6 @@
 /* universal */
 
 body {
-  padding-top: 60px;
   background: #ffffff;
 }
 
@@ -90,4 +89,16 @@ p {
     padding: 10px 0;
     border-bottom: 1px solid $gray-lighter;
   }
+}
+
+.user-panel {
+  padding-top: 80px;
+}
+
+.logo {
+  min-height: 80px;
+}
+
+.main-header {
+  background-color: #001866 !important;
 }

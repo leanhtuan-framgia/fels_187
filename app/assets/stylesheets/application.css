@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require admin/AdminLTE.min
+ *= require admin/all-skins.min
  */
