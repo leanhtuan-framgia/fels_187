@@ -27,3 +27,6 @@ en:
 
   notification:
     logout: "Are you sure want to quit?"
+
+  flash:
+    not_admin: "You don't have the permission to access this page"

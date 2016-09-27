@@ -16,6 +16,7 @@ gem "omniauth-google-oauth2", "~> 0.4.1"
 gem "omniauth-twitter", "~> 1.2", ">= 1.2.1"
 gem "omniauth"
 gem "config"
+gem "cancancan"
 
 group :development, :test do
   gem "byebug", platform: :mri
