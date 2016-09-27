@@ -74,3 +74,20 @@ p {
     padding-left: 0 px;
   }
 }
+
+/* Users index */
+
+.img-lesson {
+  max-height: 60px;
+  margin : 0px auto;
+}
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
