@@ -46,10 +46,14 @@ ActiveRecord::Schema.define(version: 20160923060430) do
   end
 
   create_table "lessons", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "status",      default: 0
+    t.datetime "started_at"
+    t.integer  "spent_time",  default: 0
+    t.integer  "score",       default: 0
     t.integer  "category_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -72,11 +76,11 @@ ActiveRecord::Schema.define(version: 20160923060430) do
   end
 
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "multiple_answer"
+    t.string   "multiple_answers", default: "--- []\n"
     t.integer  "lesson_id"
     t.integer  "question_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

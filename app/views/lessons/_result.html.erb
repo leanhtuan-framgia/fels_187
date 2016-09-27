@@ -1,0 +1,34 @@
+<div class="lesson_question">
+  <h3>
+    <span class="label label-success">
+      <%= f.label f.object.question.content %>
+    </span>
+  </h3>
+  <span class="quiz" id="quiz" data-toggle="buttons">
+    <% if f.object.question.text? %>
+      <%= f.label :answer %>
+      <%= f.text_field :content, placeholder: t("answer") %>
+    <% else %>
+      <% f.object.question.answers.each do |answer| %>
+        <div class="question_answer element-animation1">
+          <%= f.check_box :multiple_answers,
+            {checked: f.object.multiple_answers.include?(answer.id.to_s),
+            multiple: true, disabled: f.object.lesson.time_out?},
+            answer.id %>
+          <%= answer.content %>
+          <% if f.object.lesson.checked? %>
+            <% if f.object.state %>
+              <p class="label label-success">
+                <i class="glyphicon glyphicon-ok correct"></i>
+              </p>
+            <% else %>
+              <p class="label label-danger">
+                <i class="glyphicon glyphicon-remove false"></i>
+              </p>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </span>
+</div>

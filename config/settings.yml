@@ -8,3 +8,6 @@ size_profile: "50x50"
 size: 9
 size_avatar: "200x200"
 time_format: "%d/%m/%Y"
+date_time_format: "%d/%m/%Y %H:%M:%S"
+lesson_size: 2
+duration: 200

@@ -1,0 +1,53 @@
+<% provide :title, t("provide.lesson") %>
+<div class="lesson">
+  <div class="exam_info col-md-offset-4">
+    <h3><strong><%= @lesson.category.name %></strong></h3>
+    <p><%= t "lesson.created_at", time_created: "#{@lesson.created_at.
+      strftime(Settings.date_time_format).to_s}" %></p>
+    <% if @lesson.checked? %>
+      <div class="result">
+        <%= t "lesson.result" %>:
+        <span class="exam_result">
+          <b>
+            <%= t "title.count_correct", count_correct: @lesson.score %>
+            <%= t "title.results_count", results_count: @lesson.results.count %>
+          </b>
+        </span>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-11 contain container-fluid bg-info">
+    <div class="col-md-offset-1 timer">
+      <h4><%= t "time.time_remain" %></h4>
+      <%= hidden_field_tag :remaining_time, @remaining_time %>
+      <div id="clock"></div>
+    </div>
+    <%= form_for @lesson do |f| %>
+      <%= link_to "#", id: "prev", class: "btn-primary btn-lg pull-left" do %>
+        <label class="glyphicon glyphicon-arrow-left"></label>
+      <% end %>
+      <div class="divs col-md-10">
+        <%= f.fields_for :results do |builder| %>
+          <%= render "result", f: builder %>
+        <% end %>
+      </div>
+      <%= link_to "#", id: "next", class: "btn-primary btn-lg pull-left" do %>
+        <label class="glyphicon glyphicon-arrow-right"></label>
+      <% end %>
+      <div class="col-md-8 col-md-offset-2">
+        <ul class="pagination">
+          <% @lesson.results.size.times do |i| %>
+            <li><a href="#"><%= i+1 %></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-12 col-md-offset-1 center">
+        <% unless @lesson.time_out? %>
+          <%= f.submit t("btn.save"), class: "btn btn-danger btn-save" %>
+          <%= f.submit t("btn.finish"), name: "finish",
+            class: "btn btn-primary btn-finish" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -9,3 +9,44 @@ User.create! name: "Tuan", email: "tuan@gmail.com", password: "111111",
   password_confirmation: "111111", is_admin: true
 User.create! name: "user1", email: "1@gmail.com", password: "password",
   password_confirmation: "password", is_admin: false
+Category.create! name: "cate1", description: "des"
+
+10.times do
+  Lesson.create! status: 0, user_id: 2, category_id: 1
+end
+
+categories = Category.all
+categories.each do |category|
+  5.times do |n|
+    category.questions.build(
+      content: "#{n}",
+      question_type: 0).save
+  end
+  5.times do |n|
+    category.questions.build(
+      content: "#{n}",
+      question_type: 1).save
+  end
+end
+
+questions = Question.all
+questions.single_choice.each do |question|
+  question.answers.build(content: "a",
+    is_correct: true).save
+  question.answers.build(content: "b",
+    is_correct: false).save
+  question.answers.build(content: "c",
+    is_correct: false).save
+  question.answers.build(content: "d",
+    is_correct: false).save
+end
+questions.multiple_choice.each do |question|
+  question.answers.build(content: "a",
+    is_correct: true).save
+  question.answers.build(content: "b",
+    is_correct: false).save
+  question.answers.build(content: "c",
+    is_correct: true).save
+  question.answers.build(content: "d",
+    is_correct: false).save
+end
