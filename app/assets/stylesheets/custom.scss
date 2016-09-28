@@ -4,6 +4,7 @@
 /* universal */
 
 body {
+  padding-top: 50px;
   background: #ffffff;
 }
 
@@ -51,12 +52,10 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  background: #0000ff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
-  border: solid 2px #000066
 }
 
 #logo:hover {
@@ -101,4 +100,21 @@ p {
 
 .main-header {
   background-color: #001866 !important;
+}
+
+/* index user */
+
+.right-content {
+  padding-left : 5%;
+  border-left: 1px solid;
+}
+
+.list-category {
+  margin-top: 20px;
+}
+
+.box {
+  border-top: 0px;
+  border-radius: 0px;
+  box-shadow: 0 0px 0px rgba(0,0,0,0.1);
 }
