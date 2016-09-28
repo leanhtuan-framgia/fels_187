@@ -1,0 +1,5 @@
+<li class="col-md-4">
+  <%= image_tag user.avatar, class: "img-lesson",
+    size: Settings.size_avatar_list %>
+  <%= link_to user.name, user_path(user) %>
+</li>
