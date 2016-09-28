@@ -27,13 +27,36 @@ function add_fields(link, association, content) {
   $(link).before(content.replace(regexp, new_id));
 }
 
-$(document).ready(function(){
-  $('.question_type').bind('click', function(){
+
+$(document).on('turbolinks:load', function(){
+  if($('.question_type').val() == 'text'){
+    $('.correct-choose').hide();
+    $('.add_answer').hide();
+  }
+  else if($('.question_type').val() == 'single_choice'){
+    $('.correct-choose').show();
+    $('.add_answer').show();
+    $('.answer').on('change', 'input[type=checkbox]',function(){
+      $('.answer').find('input[type=checkbox]').not(this).attr('checked', false);
+    });
+  }
+  $('.question_type').on('change', function(){
     var type = $('.question_type').val();
     if(type == 'text'){
       $('.correct-choose').hide();
       $('.add_answer').hide();
-    }else{
+    }
+    else if(type == 'single_choice'){
+      $('.correct-choose').show();
+      $('.add_answer').show();
+      $('.answer').on('change', 'input[type=checkbox]',function(){
+        $('.answer').find('input[type=checkbox]').not(this).attr('checked', false);
+      });
+    }
+    else{
+      $('.answer').on('change', 'input[type=checkbox]',function(){
+
+      });
       $('.correct-choose').show();
       $('.add_answer').show();
     }

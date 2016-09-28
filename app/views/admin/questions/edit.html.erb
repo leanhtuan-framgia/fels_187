@@ -1,0 +1,10 @@
+<% provide :title, t("header.edit_question") %>
+<h1><%= t "header.edit_question" %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "question_form" %>
+  </div>
+</div>
+<%= link_to t("btn.delete"), [:admin, @question], method: :delete,
+  data: {confirm: t("confirm.delete")}, class: "btn btn-danger" %>
