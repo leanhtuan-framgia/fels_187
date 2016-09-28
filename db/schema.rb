@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 20160923060430) do
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "multiple_answer"
     t.integer  "lesson_id"
-    t.integer  "word_id"
+    t.integer  "question_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

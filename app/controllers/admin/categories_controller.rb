@@ -22,7 +22,12 @@ class Admin::CategoriesController < Admin::BaseController
   end
 
   def show
-    @questions = @category.questions.order(updated_at: :desc).
+    @questions = if params[:search_name].present?
+      Question.search_question @category.id, params[:search_name]
+    else
+      @category.questions
+    end
+    @questions = @questions.order(updated_at: :desc).
       paginate page: params[:page], per_page: Settings.size
   end
 

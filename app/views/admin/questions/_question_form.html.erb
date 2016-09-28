@@ -6,11 +6,11 @@
   <br>
   <%= f.label :question_type %>
   <%= f.select :question_type, options_for_select(@question_types.map{|key, value|
-    [t("question_type.#{key}"), key]}), {include_blank: false},
+    [t("question_type.#{key}"), key]}, @question.question_type), {include_blank: false},
     class: "form-control question_type" %>
   <div class="clearfix"></div>
   <h3><%= t "answers" %></h3>
-  <div>
+  <div class="answer">
     <%= f.fields_for :answers do |builder| %>
       <%= render "answer_fields", f: builder %>
     <% end %>

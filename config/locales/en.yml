@@ -8,6 +8,8 @@ en:
     create_user: "New user"
     users: "Users"
     create_question: "New question"
+    edit_question: "Edit question"
+    question: "Question"
 
   welcome_admin: "Welcome Admin"
 
@@ -49,6 +51,9 @@ en:
     search: "Search"
     create_user: "Create"
     delete: "Delete"
+    remove: "Remove"
+    add_answer: "Add answer"
+    create_question: "Create question"
 
   title:
     search_name: "name"
@@ -57,6 +62,7 @@ en:
 
   confirm:
     delete_user: "Are you want to delete this user?"
+    delete: "Are you want to delete?"
 
   layouts:
     home: "Home"
@@ -76,11 +82,6 @@ en:
   table:
     number_lesson: "Number lessons"
     number_question: "Number questions"
-
-  btn:
-    remove: "Remove"
-    add_answer: "Add answer"
-    submit: "Submit"
 
   question_type:
     single_choice: "Single choice"

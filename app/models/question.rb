@@ -11,6 +11,9 @@ class Question < ApplicationRecord
 
   enum question_type: [:single_choice, :multiple_choice, :text]
 
+  scope :search_question, ->category_id, name{where "category_id = #{category_id}
+    AND content LIKE '%#{name}%'"}
+
   private
   def check_correct_answer
     unless self.text?
