@@ -1,5 +1,20 @@
-<div class="jumbotron">
-  <%= link_to image_tag "dcf5ee9e-6673-4e6d-8ca9-ab27ee33bd3b.png",
-    class: "img-thumbnail" %>
-  <center><h1><%= t "header.logo" %></h1></center>
-</div>
+<% if user_signed_in? %>
+  <br>
+  <div class="row">
+    <div class="col-xs-3 left-content">
+      <div class="row text-center">
+        <%= link_to image_tag(current_user.avatar, alt: current_user.name,
+          size: Settings.size_avatar), "#" %>
+        <br>
+        <h3><%= link_to current_user.name, "#" %></h3>
+      </div>
+    </div>
+
+    <div class="col-xs-9 right-content">
+      <div class="activities">
+        <h1><%= t "activities" %></h1>
+
+      </div>
+    </div>
+  </div>
+<% end %>

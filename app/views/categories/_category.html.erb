@@ -1,0 +1,11 @@
+<div class="col-md-4 blog-main box text-center">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        <%= category.name %>
+      </h3>
+      <b><%= t "title.question_count", question_count: category.questions.size %></b>
+      <p><%= category.description %></p><br>
+    </div>
+  </div>
+</div>
