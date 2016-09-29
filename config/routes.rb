@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   resources :lessons, except: [:destroy]
   resources :categories, only: :index
   resources :users, only: [:index, :show]
+  resources :relationships, only: [:index, :create, :destroy]
 end

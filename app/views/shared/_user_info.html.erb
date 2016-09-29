@@ -1,0 +1,20 @@
+<% if user_signed_in? %>
+  <br>
+  <% if @user.nil? %>
+    <%= link_to image_tag(current_user.avatar, alt: current_user.name,
+      size: Settings.size_avatar), user_path(current_user) %>
+    <br>
+    <h3><%= link_to current_user.name, user_path(current_user) %></h3>
+  <% else %>
+    <%= link_to image_tag(@user.avatar, alt: @user.name,
+      size: Settings.size_avatar), user_path(@user) %>
+    <br>
+    <h3><%= link_to @user.name, user_path(@user) %></h3>
+    <p class="text-center">
+      <b>
+        <%= t "home.join_date",
+          time: @user.created_at.to_date.strftime(Settings.time_format) %>
+      </b><br>
+    </p>
+  <% end %>
+<% end %>

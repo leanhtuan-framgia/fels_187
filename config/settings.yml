@@ -11,3 +11,6 @@ time_format: "%d/%m/%Y"
 date_time_format: "%d/%m/%Y %H:%M:%S"
 lesson_size: 2
 duration: 200
+relation:
+  following: "following"
+  followers: "followers"
