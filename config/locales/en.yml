@@ -43,7 +43,8 @@ en:
     delete_user: "Delete user successfully!"
     create_user_success: "Create user successgully!"
     not_found: "Not found!"
-    create_success: "Create successgully!"
+    create_success: "Create successful!"
+    create_fail : "Create Failed"
     delete_success: "Delete Successful"
     delete_fail: "Delete Failed"
     edit_success: "Update Successful"
@@ -56,6 +57,9 @@ en:
     remove: "Remove"
     add_answer: "Add answer"
     create_question: "Create question"
+    submit: "Submit"
+    save: "Save"
+    finish: "Finish"
 
   title:
     search_name: "name"
@@ -63,6 +67,8 @@ en:
     description: "Description: %{description}"
     activities: "Activities"
     question_count: "%{question_count} questions"
+    count_correct: "%{count_correct}/"
+    results_count: "%{results_count}"
 
   confirm:
     delete_user: "Are you want to delete this user?"
@@ -104,3 +110,11 @@ en:
     join_date: "Joined from %{time}"
 
   activities: "Activities"
+  js:
+    alert: Your exam has timed out. Your test will be submitted automatically
+    error_follow: "Error happen"
+
+  lesson:
+    created_at: "Date created: %{time_created}"
+
+  answer: "Your answer"

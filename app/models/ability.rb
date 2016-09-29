@@ -10,6 +10,8 @@ class Ability
         cannot :manage, :all
       end
       can :read, :all
+      can :update, [Result, Lesson]
+      can :create, Lesson
     end
   end
 end
