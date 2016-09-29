@@ -11,6 +11,7 @@ en:
     edit_question: "Edit question"
     question: "Question"
     category: "Categories"
+    users: "Users"
 
   welcome_admin: "Welcome Admin"
 
@@ -98,3 +99,8 @@ en:
   notification:
     must_check: "must be checked."
     logout: "Are you want to logout?"
+
+  home:
+    join_date: "Joined from %{time}"
+
+  activities: "Activities"

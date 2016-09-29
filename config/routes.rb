@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   root "static_pages#home"
   resources :categories, only: :index
+  resources :users, only: [:index, :show]
 end

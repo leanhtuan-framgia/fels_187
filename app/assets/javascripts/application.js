@@ -40,11 +40,12 @@ $(document).on('turbolinks:load', function(){
       $('.answer').find('input[type=checkbox]').not(this).attr('checked', false);
     });
   }
-  $('.question_type').on('change', function(){
+  $('.question_type').on('click', function(){
     var type = $('.question_type').val();
     if(type == 'text'){
       $('.correct-choose').hide();
       $('.add_answer').hide();
+      $('.answer').find('input[type=checkbox]').attr('checked', false);
     }
     else if(type == 'single_choice'){
       $('.correct-choose').show();
@@ -54,9 +55,6 @@ $(document).on('turbolinks:load', function(){
       });
     }
     else{
-      $('.answer').on('change', 'input[type=checkbox]',function(){
-
-      });
       $('.correct-choose').show();
       $('.add_answer').show();
     }

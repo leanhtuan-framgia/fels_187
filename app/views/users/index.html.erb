@@ -1,0 +1,12 @@
+<% provide :title, t("header.users") %>
+<h1><%= t "header.users" %></h1>
+
+<div class="row">
+  <div class="search center">
+    <%= render "shared/search_form", name: Settings.search_field.user %>
+  </div>
+  <br>
+  <div class="row users">
+    <%= render @users %>
+  </div>
+</div>
