@@ -43,8 +43,8 @@
       </div>
       <div class="col-md-12 col-md-offset-1 center">
         <% unless @lesson.time_out? %>
-          <%= f.submit t("btn.save"), class: "btn btn-danger btn-save" %>
-          <%= f.submit t("btn.finish"), name: "finish",
+          <%= f.submit t("btn.save_lesson"), class: "btn btn-danger btn-save" %>
+          <%= f.submit t("btn.finish_lesson"), name: "finish",
             class: "btn btn-primary btn-finish" %>
         <% end %>
       </div>
