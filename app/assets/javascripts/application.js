@@ -18,6 +18,7 @@
 //= require countdown
 //= require i18n/translations
 //= require lesson
+//= require relationship
 //= require_tree .
 
 function remove_fields(link) {

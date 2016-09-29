@@ -26,6 +26,7 @@ en:
     unhappy: "Unhappy?"
     sure: "Are you sure?"
     login: "via"
+    no_relationship: "Don't have any %{relationship} yet"
 
   user_option:
     cancel_account: "Delete my account"
@@ -34,6 +35,9 @@ en:
 
   message:
     error: "This form contains %{error_count} errors"
+    relationship: "Relationship"
+    following: "following"
+    follower: "follower"
 
   notification:
     logout: "Are you sure want to quit?"
@@ -60,6 +64,8 @@ en:
     submit: "Submit"
     save: "Save"
     finish: "Finish"
+    follow: "Follow"
+    unfollow: "Unfollow"
 
   title:
     search_name: "name"
@@ -69,6 +75,7 @@ en:
     question_count: "%{question_count} questions"
     count_correct: "%{count_correct}/"
     results_count: "%{results_count}"
+    relationship: "Relationship"
 
   confirm:
     delete_user: "Are you want to delete this user?"

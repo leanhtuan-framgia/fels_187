@@ -1,0 +1,23 @@
+<% provide :title, t("title.relationship") %>
+<div class="col-md-3 aside">
+  <div class="row text-center">
+    <%= link_to image_tag(@user.avatar, alt: @user.name,
+      size: Settings.size_avatar), user_path(@user) %>
+    <br>
+    <h2><%= @user.name %></h2>
+  </div>
+</div>
+<div class="col-md-9">
+  <div class="col-md-12">
+    <h2><%= @relationship.upcase %></h2>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate @users %>
+    <% else %>
+      <h2><%= t "warning.no_relationship", relationship: @relationship %></h2>
+    <% end %>
+  </div>
+</div>
+<div class="clearfix"></div>

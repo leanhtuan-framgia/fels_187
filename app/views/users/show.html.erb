@@ -1,3 +1,17 @@
-<div class="activities">
-  <h1><%= t "activities" %></h1>
+<% provide :title, @user.name %>
+
+<div class="row">
+  <div class="col-xs-3 left-content">
+    <div class="row text-center">
+      <%= render "shared/user_info" %>
+      <%= render "follow_form" unless current_user.current_user?(@user) %>
+      <%= render "shared/stats" %>
+    </div>
+  </div>
+
+  <div class="col-xs-9 right-content">
+    <div class="activities">
+      <h1><%= t "activities" %></h1>
+    </div>
+  </div>
 </div>

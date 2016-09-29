@@ -12,6 +12,8 @@ class Ability
       can :read, :all
       can :update, [Result, Lesson]
       can :create, Lesson
+      can :create, Relationship
+      can :destroy, Relationship
     end
   end
 end
