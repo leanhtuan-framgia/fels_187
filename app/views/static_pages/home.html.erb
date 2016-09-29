@@ -1,4 +1,22 @@
-<div class="activities">
-  <h1><%= t "activities" %></h1>
+<% provide :title, t("header.home") %>
 
+<div class="row">
+  <div class="col-xs-3 left-content">
+    <div class="row text-center">
+      <%= render "shared/user_info" %>
+      <%= render "shared/stats" %>
+    </div>
+  </div>
+
+  <div class="col-xs-9 right-content">
+    <div class="activities">
+      <h1><%= t "activities" %></h1>
+      <% @activities.each do |activity| %>
+        <div class="activity">
+          <%= render_activity activity %>
+        </div>
+      <% end %>
+    </div>
+    <div class="center"><%= will_paginate @activities %></div>
+  </div>
 </div>

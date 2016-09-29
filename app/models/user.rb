@@ -30,6 +30,13 @@ class User < ApplicationRecord
     following.include? other_user
   end
 
+  def feeds
+    user_ids = self.following.map &:id
+    user_ids << id
+    PublicActivity::Activity.where("owner_id IN (?) AND owner_type =
+      'User'", user_ids)
+  end
+
   class << self
     def from_omniauth auth
       find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
