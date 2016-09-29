@@ -11,8 +11,7 @@
       <%= t "lesson.learned" %>
       <%= pluralize activity.trackable.results.count, t("lesson.word") %>
       <%= t("lesson.category") %>
-      <%= link_to activity.trackable.category.name,
-        activity.trackable.category %>
+      <%= activity.trackable.category.name %>
     </span>
     <span class="pull-right">
       <small>
