@@ -12,6 +12,7 @@ en:
     question: "Question"
     category: "Categories"
     users: "Users"
+    home: "Home"
 
   welcome_admin: "Welcome Admin"
 
@@ -141,3 +142,9 @@ en:
     wrong: "Wrong"
     confirm: "Finished!"
 
+  answer: "Your answer"
+
+  activity:
+    follow: "followed"
+    unfollow: "unfollowed"
+    ago: "%{time} ago"

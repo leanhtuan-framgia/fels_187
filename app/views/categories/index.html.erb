@@ -2,14 +2,25 @@
 <h1><%= t "provide.categories" %></h1>
 
 <div class="row">
-  <div class="search center">
-    <%= render "shared/search_form", name: Settings.search_field.category %>
+  <div class="col-xs-3 left-content">
+    <div class="row text-center">
+      <%= render "shared/user_info" %>
+      <%= render "shared/stats" %>
+    </div>
   </div>
 
-  <div class="list-category">
-    <%= render @categories %>
-  </div>
-  <div class="center">
-    <%= will_paginate %>
+  <div class="col-xs-9 right-content">
+    <div class="row">
+      <div class="search center">
+        <%= render "shared/search_form", name: Settings.search_field.category %>
+      </div>
+
+      <div class="list-category">
+        <%= render @categories %>
+      </div>
+      <div class="center">
+        <%= will_paginate %>
+      </div>
+    </div>
   </div>
 </div>

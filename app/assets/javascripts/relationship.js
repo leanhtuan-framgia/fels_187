@@ -1,5 +1,7 @@
-$(document).ready(function() {
-  $("#follow_form").submit(function(e) {
+$(document).on("turbolinks:load", function() {
+  $("#follow_form").on("submit", function(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
     if($("#submit").val() == "Follow") {
       $.ajax({
         type: "POST",
@@ -9,13 +11,12 @@ $(document).ready(function() {
         success: function(data, status, xhr) {
           $("#follow_form").html(data.partial);
           $("#followers").html(data.number);
-          return false;
         },
         error: function(status) {
-          return false;
+          alert(I18n.t("js.error_follow"));
         }
       });
-    }else {
+    }else{
       $.ajax({
         type: "DELETE",
         url: $("#follow_form form").attr("action"),
@@ -24,10 +25,9 @@ $(document).ready(function() {
         success: function(data, status, xhr) {
           $("#follow_form").html(data.partial);
           $("#followers").html(data.number);
-          return false;
         },
         error: function(status) {
-          return false;
+          alert(I18n.t("js.error_follow"));
         }
       });
     }

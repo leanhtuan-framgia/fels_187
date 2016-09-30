@@ -17,9 +17,9 @@ class RelationshipsController < ApplicationController
     @user = User.find_by id: params[:followed_id]
     unless current_user.following? @user
       current_user.follow @user
+      @relationship = current_user.active_relationships.
+        find_by followed_id: @user.id
     end
-    @relationship = current_user.active_relationships.
-      find_by followed_id: @user.id
     respond_to do |format|
       format.js do
         render json: {
@@ -32,17 +32,17 @@ class RelationshipsController < ApplicationController
 
   def destroy
     @relationship = Relationship.find_by id: params[:id]
+    unless @relationship.nil?
+      @user = @relationship.followed
+      current_user.unfollow @user
+      @relationship = current_user.active_relationships.build
+    end
     respond_to do |format|
-      unless @relationship.nil?
-        @user = @relationship.followed
-        current_user.unfollow @user
-        @relationship = current_user.active_relationships.build
-        format.js do
-          render json: {
-            number: @user.followers.count,
-            partial: render_to_string("users/_follow", layout: false)
-          }
-        end
+      format.js do
+        render json:{
+          number: @user.followers.count,
+          partial: render_to_string("users/_follow", layout: false)
+        }
       end
     end
   end

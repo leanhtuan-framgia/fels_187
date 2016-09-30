@@ -1,0 +1,23 @@
+<div class="well">
+  <% if activity.trackable %>
+    <aside class="col-md-1">
+      <%= image_tag activity.owner.avatar,
+        size: Settings.size_avatar_activity %>
+    </aside>
+    <span>
+      <b>
+        <%= link_to activity.owner.name, activity.owner if activity.owner %>
+      </b>
+      <%= t "lesson.learned" %>
+      <%= pluralize activity.trackable.results.count, t("lesson.word") %>
+      <%= t("lesson.category") %>
+      <%= link_to activity.trackable.category.name,
+        activity.trackable.category %>
+    </span>
+    <span class="pull-right">
+      <small>
+        <%= t "activity.ago", time: time_ago_in_words(activity.created_at) %>
+      </small>
+    </span>
+  <% end %>
+</div>
