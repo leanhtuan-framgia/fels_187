@@ -13,6 +13,8 @@ class Question < ApplicationRecord
 
   scope :search_question, ->category_id, name{where "category_id = #{category_id}
     AND content LIKE '%#{name}%'"}
+  scope :learned, ->user_id{joins(results: :lesson).where(lessons:{user_id: user_id,
+    status: 2, created_at: (Time.now-1.month .. Time.now)}).size}
 
   private
   def check_correct_answer

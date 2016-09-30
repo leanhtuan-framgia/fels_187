@@ -148,3 +148,13 @@ en:
     follow: "followed"
     unfollow: "unfollowed"
     ago: "%{time} ago"
+
+  mail:
+    remind_subject: "Start exam"
+    result_subject: "Finish exam"
+    monthly_subject: "Monthly report"
+    header: "Good news, %{user_name}"
+    header_remind: "Greeting, %{user_name}"
+    content_finish: "You have completed a lesson!"
+    content_month: "During this month you have learn %{question_count} new words"
+    content_remind: "You have an incompleted lesson, please login to finish your learning"

@@ -8,6 +8,7 @@ class Lesson < ApplicationRecord
   has_many :results, dependent: :destroy
 
   before_create :build_result
+  after_create :send_remind_email
 
   accepts_nested_attributes_for :results, allow_destroy: true
 
@@ -46,5 +47,9 @@ class Lesson < ApplicationRecord
     category.questions.shuffle().take(Settings.lesson_size).each do |question|
       self.results.build question_id: question.id
     end
+  end
+
+  def send_remind_email
+    LessonWorker.perform_async self.id, LessonWorker::START_EXAM
   end
 end

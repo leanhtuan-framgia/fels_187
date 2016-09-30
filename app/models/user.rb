@@ -58,5 +58,9 @@ class User < ApplicationRecord
         end
       end
     end
+
+    def question_learned user
+      Question.learned user.id
+    end
   end
 end
