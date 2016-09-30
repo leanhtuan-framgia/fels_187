@@ -13,6 +13,7 @@ en:
     category: "Categories"
     users: "Users"
     home: "Home"
+    lesson_list: "Lesson List"
 
   welcome_admin: "Welcome Admin"
 
@@ -141,8 +142,6 @@ en:
     correct_answer: "Correct Answer: "
     wrong: "Wrong"
     confirm: "Finished!"
-
-  answer: "Your answer"
 
   activity:
     follow: "followed"

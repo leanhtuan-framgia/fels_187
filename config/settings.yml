@@ -15,3 +15,10 @@ duration: 200
 relation:
   following: "following"
   followers: "followers"
+label:
+  label_testing: "label label-warning"
+  label_init: "label label-default"
+  label_checked: "label label-success"
+btn:
+  btn_start: "btn btn-primary"
+  btn_view: "btn btn-success"

@@ -25,4 +25,22 @@ module ApplicationHelper
     href = html_options[:href] || "#"
     link_to name, href, onclick: onclick
   end
+
+  def status_lesson lesson
+    if lesson.in_progress?
+      Settings.label.label_testing
+    elsif lesson.checked?
+      Settings.label.label_checked
+    else
+      Settings.label.label_init
+    end
+  end
+
+  def status_button lesson
+    if lesson.init?
+      Settings.btn.btn_start
+    else
+      Settings.btn.btn_view
+    end
+  end
 end

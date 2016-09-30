@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   namespace :admin do
-    root "static_pages#home"
+    root "lessons#index"
     resources :users, except: [:edit, :update]
     resources :questions, only: [:new, :create]
     resources :categories

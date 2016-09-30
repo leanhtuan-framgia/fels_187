@@ -23,7 +23,7 @@
         </div>
         <ul class="sidebar-menu">
           <li>
-            <%= link_to "#" do %>
+            <%= link_to admin_root_path do %>
               <i class="glyphicon glyphicon-home"></i>
               <span><%= t "layouts.home" %></span>
             <% end %>
@@ -44,12 +44,6 @@
             <%= link_to admin_lessons_path do %>
               <i class="glyphicon glyphicon-book"></i>
               <span><%= t "layouts.lessons" %></span>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to "#" do %>
-              <i class="glyphicon glyphicon-home"></i>
-              <span><%= t "layouts.logout" %></span>
             <% end %>
           </li>
       </section>

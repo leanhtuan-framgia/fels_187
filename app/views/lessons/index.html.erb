@@ -1,0 +1,44 @@
+<% provide :title, t("header.lesson_list") %>
+<h1><%= t "header.lessons_list" %></h1>
+
+<div class="lesson-list">
+  <table class="table table-striped">
+    <thead class="thead_table_word">
+      <tr>
+        <td><%= t "title.lesson.created_date" %></td>
+        <td><%= t "title.lesson.subject" %></td>
+        <td><%= t "title.lesson.status" %></td>
+        <td><%= t "title.lesson.duration" %></td>
+        <td><%= t "title.lesson.question_number" %></td>
+        <td><%= t "title.lesson.spent_time" %></td>
+        <td><%= t "title.lesson.score" %></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @lessons.any? %>
+      <% @lessons.each do |lesson| %>
+      <tr>
+        <td><%= lesson.created_at.to_date %></td>
+        <td><%= lesson.category.name %></td>
+        <td>
+          <p class="<%= "#{status_lesson lesson}" %>">
+            <%= lesson.status %>
+          </p>
+        </td>
+        <td><%= Settings.time_duration %></td>
+        <td><%= lesson.results.count %></td>
+        <td><%= lesson.spent_time %></td>
+        <td>
+          <%= t "title.count_correct", count_correct: lesson.score %>
+          <%= t "title.results_count", results_count: lesson.results.count %>
+        </td>
+        <td><%= link_to t("btn.#{lesson.init? ? "start" : "view"}"), lesson,
+          class: "#{status_button lesson}" %></td>
+        </tr>
+        <% end %><br />
+      <% end %>
+    </tbody>
+  </table>
+  <div class="center"><%= will_paginate @lessons %></div>
+</div>

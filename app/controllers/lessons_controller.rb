@@ -1,6 +1,13 @@
 class LessonsController < ApplicationController
   load_and_authorize_resource
 
+
+  def index
+    @lessons = current_user.lessons.includes :category
+    @lessons = @lessons.order(updated_at: :desc).
+      paginate page: params[:page], per_page: Settings.size_lesson
+  end
+
   def create
     @lesson = current_user.lessons.new lesson_params
     if @lesson.save
