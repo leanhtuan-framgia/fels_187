@@ -1,0 +1,21 @@
+<% provide :title, t("title.index_lesson") %>
+
+<h1><%= t "title.index_lesson" %></h1>
+<div class="col-md-10 col-md-offset-1">
+  <table class="table table-hover table-striped">
+    <tr>
+      <th><b><%= t "lesson.category" %></b></th>
+      <th><b><%= t "lesson.owner" %></b></th>
+      <th><b><%= t "lesson.create_at" %></b></th>
+      <th><b><%= t "lesson.spent_time" %></b></th>
+      <th><b><%= t "lesson.scored" %></b></th>
+      <th><b><%= t "lesson.status" %></b></th>
+      <th></th>
+    </tr>
+    <%= render @lessons %>
+  </table>
+
+  <div class="center">
+    <%= will_paginate %>
+  </div>
+</div>

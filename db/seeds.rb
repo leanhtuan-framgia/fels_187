@@ -11,10 +11,6 @@ User.create! name: "user1", email: "1@gmail.com", password: "password",
   password_confirmation: "password", is_admin: false
 Category.create! name: "cate1", description: "des"
 
-10.times do
-  Lesson.create! status: 0, user_id: 2, category_id: 1
-end
-
 categories = Category.all
 categories.each do |category|
   5.times do |n|
@@ -31,22 +27,34 @@ end
 
 questions = Question.all
 questions.single_choice.each do |question|
-  question.answers.build(content: "a",
+  question.answers.build(content: "Option 1",
     is_correct: true).save
-  question.answers.build(content: "b",
+  question.answers.build(content: "Option 2",
     is_correct: false).save
-  question.answers.build(content: "c",
+  question.answers.build(content: "Option 3",
     is_correct: false).save
-  question.answers.build(content: "d",
+  question.answers.build(content: "Option 4",
     is_correct: false).save
 end
+
 questions.multiple_choice.each do |question|
-  question.answers.build(content: "a",
+  question.answers.build(content: "Option 1",
     is_correct: true).save
-  question.answers.build(content: "b",
+  question.answers.build(content: "Option 2",
     is_correct: false).save
-  question.answers.build(content: "c",
+  question.answers.build(content: "Option 3",
     is_correct: true).save
-  question.answers.build(content: "d",
+  question.answers.build(content: "Option 4",
+    is_correct: false).save
+end
+
+questions.text.each do |question|
+  question.answers.build(content: "answer number 1",
+    is_correct: true).save
+  question.answers.build(content: "answer number 2",
+    is_correct: false).save
+  question.answers.build(content: "answer number 3",
+    is_correct: true).save
+  question.answers.build(content: "answer number 4",
     is_correct: false).save
 end

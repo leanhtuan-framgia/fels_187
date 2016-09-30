@@ -76,11 +76,12 @@ ActiveRecord::Schema.define(version: 20160923060430) do
   end
 
   create_table "results", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "multiple_answers", default: "--- []\n"
+    t.boolean  "state",            default: false
+    t.string   "multiple_answers"
     t.integer  "lesson_id"
     t.integer  "question_id"
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

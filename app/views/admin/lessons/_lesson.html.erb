@@ -1,0 +1,15 @@
+<tr>
+  <td>
+    <%= link_to lesson.category.name, admin_category_path(lesson.category) %>
+  </td>
+  <td><%= link_to lesson.user.name, user_path(lesson.user) %></td>
+  <td><%= lesson.created_at.strftime(Settings.date_time_format) %></td>
+  <td><%= lesson.spent_time %></td>
+  <td><%= t "lesson.score", score: lesson.score,
+    total: Settings.lesson_size %></td>
+  <td><%= lesson.status %></td>
+  <td>
+    <%= link_to t("btn.check"), edit_admin_lesson_path(lesson),
+      class: "btn btn-primary" if lesson.unchecked? || lesson.checked? %>
+  </td>
+</tr>

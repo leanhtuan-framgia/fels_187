@@ -1,0 +1,64 @@
+<% provide :title, t("title.check_lesson") %>
+<div class ="col-md-offset-2">
+  <%= form_for [:admin, @lesson] do |lesson| %>
+    <ol>
+      <%= lesson.fields_for :results do |result| %>
+        <li id="question_<%= result.object.question.id %>">
+          <h3><%= result.label result.object.question.content %></h3>
+          <% if result.object.question.text? %>
+            <%= result.label :answer %>
+            <%= result.text_field :multiple_answers,
+              placeholder: t("answer.your_answer"),
+              multiple: true,
+              disabled: result.object.lesson.time_out? %>
+            <% if result.object.state %>
+              <p class="label label-success">
+                <i class="glyphicon glyphicon-ok correct"></i>
+              </p>
+            <% else %>
+              <p class="label label-danger">
+                <i class="glyphicon glyphicon-remove false"></i>
+              </p>
+            <% end %>
+            <p><%= t "answer.correct_answer" %>
+              <%= link_to result.object.question.answers.first.content,
+              edit_admin_question_path(result.object.question),
+              class: "label-success" %>
+            </p>
+          <% else %>
+            <% result.object.question.answers.each do |answer| %>
+              <div>
+                <%= result.check_box :multiple_answers,
+                  {checked: result.object.multiple_answers.nil? ?
+                  false : result.object
+                  .multiple_answers.include?(answer.id.to_s),
+                  multiple: true, disabled: true},
+                  answer.id, false %>
+                <b><%= link_to answer.content, edit_admin_question_path(answer
+                  .question), class: answer.is_correct? ?
+                  "label-success" : "label-danger" %></b><br>
+                <% if answer.is_correct %>
+                  <p class="label label-success">
+                    <i class="glyphicon glyphicon-ok correct"></i>
+                  </p>
+                <% else %>
+                  <p class="label label-danger">
+                    <i class="glyphicon glyphicon-remove false"></i>
+                  </p>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <div>
+            <%= t "lesson.is_correct" %>
+            <%= result.check_box :state, checked: result.object.state %>
+          </div>
+        </li>
+      <% end %>
+    </ol>
+    <%= link_to t("btn.back"), admin_lessons_path, class: "btn btn-primary" %>
+    <%= lesson.hidden_field :status, value: "checked" %>
+    <%= lesson.submit t("btn.done"), class: "btn btn-primary",
+      data: {confirm: t("answer.confirm")} %>
+  <% end %>
+</div>

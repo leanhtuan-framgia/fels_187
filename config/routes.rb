@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :questions, only: [:new, :create]
     resources :categories
     resources :questions, except: [:index]
+    resources :lessons, except: [:new, :show, :destroy]
   end
 
   root "static_pages#home"

@@ -27,7 +27,15 @@ class Lesson < ApplicationRecord
     if init?
       update_attributes started_at: Time.zone.now, status: :in_progress
     elsif in_progress?
-      update_attributes spent_time: calculated_spent_time
+      update_attributes spent_time: calculated_spent_time,
+        status: Time.zone.now > started_at + Settings.duration ?
+        :unchecked : :in_progress
+    end
+  end
+
+  def update_results_state
+    results.each do |result|
+      result.update_state
     end
   end
 
